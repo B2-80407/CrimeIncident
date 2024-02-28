@@ -7,10 +7,15 @@ Data Engineering Project using PySpark, Airflow, and Hadoop
 Overview:
 
 This project is a comprehensive data engineering solution that fetches data from an external API in JSON format, processes it using PySpark, and stores it locally and on Hadoop for further analysis and visualization. It utilizes Apache Airflow for task scheduling, ensuring automation and reliability.
+
+Datastructure:
+	[{"incident_datetime":"2024-02-15T00:00:00.000","incident_date":"2024-02-15T00:00:00.000","incident_time":"00:00","incident_year":"2024","incident_day_of_week":"Thursday","report_datetime":"2024-02-15T07:09:00.000","row_id":"136484905151","incident_id":"1364849","incident_number":"240101157","cad_number":"240460461","report_type_code":"II","report_type_description":"Initial","incident_code":"05151","incident_category":"Burglary","incident_subcategory":"Burglary - Other","incident_description":"Burglary, Non-residential, Forcible Entry","resolution":"Open or Active","intersection":"VALLEJO ST \\ POLK ST","cnn":"25317000","police_district":"Northern","analysis_neighborhood":"Russian Hill","supervisor_district":"3","supervisor_district_2012":"3","latitude":"37.796897888183594","longitude":"-122.42195892333984","point":{"type":"Point","coordinates":[-122.42195892333984,37.796897888183594]}}]
+
 Project Flow:
 
     Data Extraction and Transformation:
-        The project starts with extracting data from the San Francisco government's data API (https://data.sfgov.org/resource/wg3w-h783.json). The data is filtered based on the incident date, typically two days prior to the current date.
+        The project starts with extracting data from the San Francisco government's data API (https://data.sfgov.org/resource/wg3w-h783.json).
+         The data is filtered based on the incident date, typically two days prior to the current date.
         The extracted JSON data is saved locally in a specified folder.
         PySpark is then used to process the JSON data:
             The JSON data is read into a PySpark DataFrame.
